@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070a18"><title>TGH | Thoyajaksh's GATE Hub</title>
+<style>
+:root{--bg:#070a18;--panel:#11182e;--text:#f5f7ff;--muted:#a8b2d1;--blue:#42c7ff;--purple:#9b7bff;--pink:#ff62c8;--gold:#ffd36b;--line:#ffffff20}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font:16px/1.55 system-ui,Segoe UI,Arial;background:radial-gradient(ellipse at 12% 5%,#42c7ff20,transparent 32%),radial-gradient(ellipse at 90% 10%,#ff62c81b,transparent 30%),radial-gradient(ellipse at 70% 80%,#9b7bff20,transparent 35%),var(--bg)}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.18;background-image:radial-gradient(#b8d8ff 1px,transparent 1px);background-size:48px 48px}
+button,input,select{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{cursor:pointer}.wrap{width:min(1180px,calc(100% - 30px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:#070a18dc;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.5px}.logo{width:43px;height:43px;display:grid;place-items:center;border-radius:14px;color:#07101f;background:linear-gradient(135deg,var(--blue),var(--purple),var(--pink));font-size:14px}.brand small{display:block;font-size:10px;color:var(--muted);letter-spacing:1.5px}.navlinks{display:flex;align-items:center;gap:17px;font-size:14px}.navlinks a:hover{color:var(--pink)}.pill{border:1px solid #42c7ff55;background:#42c7ff12;color:#8ce0ff;padding:8px 12px;border-radius:99px;font-size:12px;font-weight:800}
+.hero{padding:60px 0 28px}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:25px}.eyebrow{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#5dffbd;box-shadow:0 0 12px #5dffbd;margin-right:7px}
+h1{font-size:clamp(42px,6vw,78px);line-height:1;letter-spacing:-3px;margin:17px 0}.gradient{background:linear-gradient(95deg,#f6f8ff,var(--blue),var(--purple),var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:620px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 16px;border-radius:12px;border:1px solid var(--line);font-weight:800}.primary{background:linear-gradient(100deg,var(--blue),#a69aff,var(--pink));color:#07101f;border:0}.secondary{background:#ffffff09;color:var(--text)}.btn:hover{transform:translateY(-2px)}
+.space{height:300px;display:grid;place-items:center;position:relative}.planet{width:145px;height:145px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#b8f4ff,#5278e9 38%,#34216e 70%,#100e2b);box-shadow:inset -20px -15px 30px #050716,0 0 65px #6b70ff55;position:relative}.planet:after{content:"";position:absolute;inset:44% -28%;height:28px;border:3px solid var(--pink);border-left-color:var(--blue);border-right-color:var(--gold);border-radius:50%;transform:rotate(-22deg)}.orbit{position:absolute;width:280px;height:120px;border:1px solid #7baaff60;border-radius:50%;transform:rotate(-25deg);animation:spin 18s linear infinite}.orbit.two{width:330px;height:160px;border-color:#ff8be44a;animation-duration:25s;transform:rotate(35deg)}.tag{position:absolute;padding:8px 11px;border:1px solid var(--line);border-radius:11px;background:#10162be8;font-size:12px}.tag.a{top:25px;left:0}.tag.b{bottom:25px;right:0;color:var(--gold)}@keyframes spin{to{transform:rotate(335deg)}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:10px 0 34px}.stat,.resource,.card,.subject,.topic,.content{border:1px solid var(--line);background:linear-gradient(145deg,#141b34ed,#0c1124f2);border-radius:17px}.stat{padding:15px}.stat strong{display:block;font-size:24px;background:linear-gradient(90deg,var(--blue),var(--pink));-webkit-background-clip:text;color:transparent}.stat span{font-size:12px;color:var(--muted)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:25px 0 16px}.section-head h2{margin:0;font-size:clamp(24px,3vw,34px)}.section-head p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.search{flex:1;min-width:220px;background:#0e1428;border:1px solid var(--line);border-radius:12px;padding:12px;color:var(--text);outline:none}.search:focus{border-color:var(--blue)}select{background:#10162b;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:12px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{--accent:var(--blue);position:relative;text-align:left;color:var(--text);padding:18px;min-height:172px;overflow:hidden;transition:.2s}.card:before{content:"";position:absolute;right:-35px;top:-50px;width:130px;height:130px;border-radius:50%;background:var(--accent);opacity:.13}.card:hover,.subject:hover,.topic:hover,.resource:hover{transform:translateY(-3px);border-color:var(--accent,var(--blue));box-shadow:0 12px 30px #0004}.cardtop{display:flex;justify-content:space-between;align-items:center}.code{width:45px;height:45px;display:grid;place-items:center;border-radius:13px;background:#ffffff0b;border:1px solid var(--accent);color:var(--accent);font-weight:950}.card h3{font-size:17px;margin:13px 0 4px;position:relative}.card p{font-size:13px;color:var(--muted);margin:0 0 12px;position:relative}.cardfoot{display:flex;justify-content:space-between;color:var(--accent);font-size:12px;font-weight:900;position:relative}.empty{grid-column:1/-1;text-align:center;padding:30px;border:1px dashed var(--line);border-radius:15px;color:var(--muted)}
+.resources{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:45px}.resource{padding:19px;transition:.2s}.resource .icon{font-size:26px}.resource h3{margin:8px 0 4px}.resource p{color:var(--muted);font-size:13px}.resource a{color:var(--blue);font-size:13px;font-weight:850}
+.hidden{display:none!important}.crumb{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0 10px;color:var(--muted);font-size:13px}.crumb button{border:0;background:none;color:var(--blue);padding:0}.viewtitle{font-size:clamp(32px,4vw,52px);letter-spacing:-1.5px;margin:10px 0 4px}.desc{color:var(--muted)}.progress{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#11182b;margin:17px 0}.bar{height:7px;border-radius:99px;background:#ffffff15;margin-top:9px;overflow:hidden}.bar span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink))}.subjects,.topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:20px 0 35px}.subject,.topic{color:var(--text);text-align:left;padding:17px;transition:.2s}.subject h3,.topic h3{margin:7px 0}.subject p,.topic p{color:var(--muted);font-size:13px;margin:0}.mini{color:var(--pink);font-size:11px;font-weight:900;letter-spacing:1px}.content{padding:22px;margin:20px 0 35px}.content li{margin:9px 0;color:#dce5ff}.note{padding:12px 14px;border-left:3px solid var(--gold);background:#ffd36b0c;border-radius:0 10px 10px 0;color:#dce5ff;font-size:13px;margin:15px 0}
+footer{border-top:1px solid var(--line);padding:23px 0 30px;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.backdrop{display:none;position:fixed;inset:0;z-index:40;background:#030510d9;backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:16px}.backdrop.show{display:flex}.modal{position:relative;width:min(560px,100%);max-height:86vh;overflow:auto;padding:23px;border:1px solid #a9b8ff55;border-radius:20px;background:linear-gradient(145deg,#17203b,#0a1022);box-shadow:0 25px 80px #0009}.close{position:absolute;right:13px;top:13px;background:#ffffff0b;border:1px solid var(--line);color:white;border-radius:9px;padding:7px 10px}.modal h2{margin:13px 40px 6px}.modal p,.modal li{color:var(--muted)}.modal li{margin:7px 0}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#182440;border:1px solid #42c7ff77;padding:10px 15px;border-radius:11px;z-index:70;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.space{height:245px}.grid,.subjects,.topics{grid-template-columns:repeat(2,minmax(0,1fr))}.resources{grid-template-columns:1fr}.navlinks .optional{display:none}}
+@media(max-width:560px){.wrap{width:calc(100% - 22px)}.nav{height:62px}.brand{font-size:12px}.brand small{font-size:8px}.logo{width:37px;height:37px}.navlinks{gap:8px;font-size:12px}.hero{padding-top:40px}h1{letter-spacing:-1.5px}.stats{grid-template-columns:repeat(2,1fr)}.grid,.subjects,.topics{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.space{height:220px}.planet{width:120px;height:120px}.orbit{width:230px}.orbit.two{width:265px}.tag{font-size:10px}.tag.a{left:0}.tag.b{right:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#" id="homeBrand"><span class="logo">TGH</span><span>THOYAJAKSH'S GATE HUB<small>LEARN · PRACTISE · LAUNCH</small></span></a>
+<nav class="navlinks"><a href="#papers" id="papersNav">GATE Papers</a><a class="optional" href="#resources">Resources</a><button class="pill" id="savedNav">☆ Bookmarks <span id="savedCount">0</span></button></nav>
+</div></header>
+<main class="wrap">
+<section id="home">
+<div class="hero"><div class="hero-grid"><div>
+<span class="eyebrow"><span class="dot"></span> YOUR ENGINEERING LAUNCHPAD</span>
+<h1>Prepare today.<br><span class="gradient">Build tomorrow.</span></h1>
+<p>A futuristic hub for your GATE journey. Explore papers, open subjects, preview topics, and bookmark the areas you want to study.</p>
+<div class="actions"><a class="btn primary" href="#papers">Explore GATE Papers ↗</a><a class="btn secondary" href="#resources">Official Resources ↓</a></div>
+</div><div class="space"><span class="tag a">✦ THINK · DESIGN · SOLVE</span><div class="orbit"></div><div class="orbit two"></div><div class="planet"></div><span style="position:absolute;top:26px;right:16%;font-size:25px">🛰️</span><span class="tag b">🚀 ENGINEER YOUR FUTURE</span></div></div></div>
+<div class="stats"><div class="stat"><strong id="paperStat">30</strong><span>GATE paper areas</span></div><div class="stat"><strong id="subjectStat">—</strong><span>Subject collections</span></div><div class="stat"><strong id="topicStat">—</strong><span>Starter topics</span></div><div class="stat"><strong id="bookmarkStat">0</strong><span>Topics bookmarked</span></div></div>
+<section id="papers"><div class="section-head"><div><h2><span class="gradient">Choose your GATE paper</span></h2><p>Pick a paper to explore subject collections and topic roadmaps.</p></div><span class="pill">30 PAPER AREAS</span></div>
+<div class="toolbar"><input class="search" id="search" type="search" placeholder="⌕  Search paper, subject, or topic…"><select id="filter" aria-label="Filter papers"><option value="all">All categories</option><option value="engineering">Engineering</option><option value="science">Science & Maths</option><option value="humanities">Humanities</option><option value="interdisciplinary">Interdisciplinary</option></select></div>
+<div class="grid" id="paperGrid"></div></section>
+<section id="resources"><div class="section-head"><div><h2>Launch with <span class="gradient">trusted resources</span></h2><p>Always confirm the current syllabus from official sources.</p></div></div>
+<div class="resources">
+<article class="resource"><div class="icon">📘</div><h3>Official GATE syllabus</h3><p>Check the official paper list and syllabus before planning your study schedule.</p><a href="https://gate2027.iitm.ac.in/exam_papers_and_syllabus" target="_blank" rel="noopener">Open GATE 2027 syllabus ↗</a></article>
+<article class="resource"><div class="icon">🧭</div><h3>Exam pattern</h3><p>Review the official question-paper pattern and exam structure.</p><a href="https://gate2027.iitm.ac.in/question_paper_pattern" target="_blank" rel="noopener">Open exam pattern ↗</a></article>
+<article class="resource"><div class="icon">🎓</div><h3>NPTEL courses</h3><p>Find university-level lecture courses and learning material.</p><a href="https://nptel.ac.in/" target="_blank" rel="noopener">Explore NPTEL ↗</a></article>
+</div></section></section>
+<section id="detail" class="hidden"><div class="crumb" id="crumb"></div><span class="eyebrow"><span class="dot"></span> YOUR LEARNING PATH</span><h1 class="viewtitle gradient" id="title"></h1><p class="desc" id="desc"></p>
+<div class="progress"><div style="display:flex;justify-content:space-between;gap:10px"><b>Topic progress</b><span id="progressLabel">0% complete</span></div><div class="bar"><span id="progressBar"></span></div></div><div id="detailContent"></div><div class="actions" style="margin-bottom:40px"><button class="btn secondary" id="back">← Back</button><a class="btn primary" href="#resources">Official Resources ↗</a></div></section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> TGH · Thoyajaksh's GATE Hub</span><span>Study smarter · Verify every topic with the official syllabus.</span></div></footer>
+<div class="backdrop" id="backdrop" role="dialog" aria-modal="true" aria-labelledby="previewTitle"><div class="modal"><button class="close" id="closeModal" aria-label="Close preview">✕</button><span class="eyebrow">TOPIC PREVIEW</span><h2 id="previewTitle" class="gradient"></h2><p id="previewDesc"></p><b>Suggested study path</b><ul id="previewSteps"></ul><div class="note">This is a starter study outline, not complete lecture notes or solved questions. Verify the topic in the current official syllabus.</div><div class="actions"><button class="btn primary" id="openTopic">Open full topic →</button><button class="btn secondary" id="modalSave">☆ Bookmark</button></div></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const papers=[
+["AE","Aerospace Engineering","engineering","✈","#42c7ff",["Engineering Mathematics","Flight Mechanics","Aerodynamics","Structures","Propulsion"]],
+["AG","Agricultural Engineering","engineering","🌱","#7ce6a4",["Engineering Mathematics","Farm Machinery","Soil & Water Engineering","Agricultural Processing"]],
+["AR","Architecture & Planning","interdisciplinary","🏙","#ff9dca",["Architecture & Design","Building Materials","Planning","Environmental Planning"]],
+["BM","Biomedical Engineering","interdisciplinary","🧬","#ff78d0",["Engineering Mathematics","Biomedical Signals","Medical Imaging","Biomaterials"]],
+["BT","Biotechnology","science","🧫","#a9e66e",["Biochemistry","Microbiology","Genetics","Bioprocess Engineering"]],
+["CE","Civil Engineering","engineering","🌉","#ffc46b",["Engineering Mathematics","Structural Engineering","Geotechnical Engineering","Environmental Engineering","Transportation"]],
+["CH","Chemical Engineering","engineering","⚗","#ff9c70",["Engineering Mathematics","Process Calculations","Fluid Mechanics","Heat Transfer","Mass Transfer","Reaction Engineering"]],
+["CS","Computer Science & IT","engineering","💻","#42c7ff",["Engineering Mathematics","Discrete Mathematics","Digital Logic","Computer Organization","Programming & Data Structures","Algorithms","Theory of Computation","Compiler Design","Operating Systems","Databases","Computer Networks"]],
+["CY","Chemistry","science","⚛","#a98bff",["Physical Chemistry","Inorganic Chemistry","Organic Chemistry","Spectroscopy"]],
+["DA","Data Science & AI","interdisciplinary","🤖","#ff78d0",["Probability & Statistics","Linear Algebra","Programming","Machine Learning","Artificial Intelligence","Database & Warehousing"]],
+["EC","Electronics & Communication","engineering","📡","#42c7ff",["Engineering Mathematics","Networks","Electronic Devices","Analog Circuits","Digital Circuits","Signals & Systems","Control Systems","Communications","Electromagnetics"]],
+["EE","Electrical Engineering","engineering","⚡","#ffd36b",["Engineering Mathematics","Electric Circuits","Electromagnetic Fields","Electrical Machines","Power Systems","Control Systems","Power Electronics"]],
+["ES","Environmental Science & Engineering","interdisciplinary","🌍","#7ce6a4",["Environmental Chemistry","Ecology","Water & Wastewater","Air Pollution","Solid Waste","Environmental Management"]],
+["EY","Ecology & Evolution","science","🦋","#7ce6a4",["Ecology","Evolution","Population Biology","Biodiversity","Behavioural Ecology"]],
+["GE","Geomatics Engineering","engineering","🛰","#42c7ff",["Engineering Mathematics","Surveying","Remote Sensing","Geographic Information Systems","GNSS"]],
+["GG","Geology & Geophysics","science","🪨","#ffc46b",["Geology","Mineralogy","Structural Geology","Geophysics","Seismology"]],
+["IN","Instrumentation Engineering","engineering","🎛","#a98bff",["Engineering Mathematics","Electrical Circuits","Measurements","Sensors","Analog Electronics","Control Systems"]],
+["MA","Mathematics","science","∑","#42c7ff",["Linear Algebra","Real Analysis","Complex Analysis","Abstract Algebra","Differential Equations","Topology","Numerical Analysis"]],
+["ME","Mechanical Engineering","engineering","⚙","#ffc46b",["Engineering Mathematics","Engineering Mechanics","Strength of Materials","Theory of Machines","Thermodynamics","Fluid Mechanics","Heat Transfer","Manufacturing"]],
+["MN","Mining Engineering","engineering","⛏","#ffc46b",["Mine Development","Mining Geology","Surface Mining","Underground Mining","Mine Ventilation","Mine Safety"]],
+["MT","Metallurgical Engineering","engineering","🔩","#ff9c70",["Engineering Mathematics","Extractive Metallurgy","Physical Metallurgy","Mechanical Metallurgy","Manufacturing Processes"]],
+["NM","Naval Architecture & Marine Engineering","engineering","🚢","#42c7ff",["Fluid Mechanics","Ship Geometry","Ship Stability","Resistance & Propulsion","Marine Structures"]],
+["PE","Petroleum Engineering","engineering","🛢","#ffd36b",["Petroleum Geology","Drilling Engineering","Reservoir Engineering","Production Engineering","Well Testing"]],
+["PH","Physics","science","🔭","#a98bff",["Mathematical Physics","Classical Mechanics","Electromagnetism","Quantum Mechanics","Thermodynamics & Statistical Physics","Atomic & Molecular Physics"]],
+["PI","Production & Industrial Engineering","engineering","🏭","#ff9c70",["Engineering Mathematics","Manufacturing Processes","Operations Research","Quality & Reliability","Industrial Engineering"]],
+["RA","Robotics & AI","interdisciplinary","🦾","#ff78d0",["Mathematics for Robotics","Mechanics & Control","Sensors & Actuators","Robot Motion Planning","Artificial Intelligence"]],
+["ST","Statistics","science","📊","#42c7ff",["Probability","Distribution Theory","Statistical Inference","Stochastic Processes","Regression Analysis","Multivariate Analysis"]],
+["XE","Engineering Sciences","engineering","🧰","#a98bff",["Engineering Mathematics","Fluid Mechanics","Materials Science","Solid Mechanics","Thermodynamics","Polymer Science"]],
+["XH","Humanities & Social Sciences","humanities","📚","#ff78d0",["Economics","English","Linguistics","Philosophy","Psychology","Sociology"]],
+["XL","Life Sciences","science","🧬","#7ce6a4",["Biochemistry","Botany","Microbiology","Zoology","Food Technology"]]
+].map(x=>({code:x[0],name:x[1],cat:x[2],icon:x[3],color:x[4],subjects:x[5]}));
+const topicMap={
+"Engineering Mathematics":["Linear Algebra","Calculus","Differential Equations","Probability & Statistics","Numerical Methods"],
+"Flight Mechanics":["Atmosphere & Airspeed","Aircraft Performance","Static Stability","Dynamic Stability","Flight Dynamics"],
+"Aerodynamics":["Basic Fluid Concepts","Continuity & Momentum","Airfoils","Lift and Drag","Compressible Flow"],
+"Structures":["Stress and Strain","Bending & Torsion","Structural Analysis","Aircraft Structural Components"],
+"Propulsion":["Jet Engine Basics","Gas Turbine Cycle","Thrust & Efficiency","Rocket Propulsion"],
+"Discrete Mathematics":["Logic & Sets","Relations and Functions","Combinatorics","Graph Theory","Boolean Algebra"],
+"Programming & Data Structures":["C Basics","Arrays & Linked Lists","Stacks and Queues","Trees and Graphs"],
+"Algorithms":["Asymptotic Analysis","Searching & Sorting","Greedy Algorithms","Dynamic Programming","Graph Algorithms"],
+"Operating Systems":["Processes & Threads","CPU Scheduling","Synchronization","Memory Management","File Systems"],
+"Databases":["Relational Model","SQL","Normalization","Transactions","Indexing"],
+"Computer Networks":["Network Models","Data Link Layer","IP Addressing","Routing","Transport Layer"],
+"Thermodynamics":["Properties of Pure Substances","First Law","Second Law","Power Cycles","Refrigeration"],
+"Fluid Mechanics":["Fluid Properties","Fluid Statics","Continuity & Bernoulli","Momentum Equation","Dimensional Analysis"],
+"Signals & Systems":["Continuous-Time Signals","LTI Systems","Fourier Series","Fourier Transform","Laplace Transform"],
+"Control Systems":["System Modelling","Transfer Functions","Block Diagrams","Stability","Frequency Response"],
+"Organic Chemistry":["Structure & Bonding","Reaction Mechanisms","Stereochemistry","Aromaticity","Named Reactions"],
+"Physical Chemistry":["Chemical Thermodynamics","Chemical Kinetics","Equilibrium","Electrochemistry","Quantum Chemistry"],
+"Probability & Statistics":["Counting & Probability","Random Variables","Probability Distributions","Estimation","Hypothesis Testing"],
+"Machine Learning":["Learning Types","Linear Regression","Classification","Model Evaluation","Clustering"],
+"Artificial Intelligence":["Search Algorithms","Knowledge Representation","Reasoning","Planning","Neural Networks"],
+"Linear Algebra":["Matrices & Determinants","Vector Spaces","Linear Transformations","Eigenvalues & Eigenvectors"],
+"Calculus":["Limits & Continuity","Differentiation","Integration","Multiple Integrals","Vector Calculus"]
+};
+const generic=["Core Concepts & Definitions","Important Principles","Standard Methods","Applications & Problem Solving","Previous-Year Question Practice"];
+const $=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const S={view:"home",paper:null,subject:null,topic:null,preview:null,search:"",cat:"all",saved:new Set(JSON.parse(localStorage.getItem("tghSaved")||"[]")),done:new Set(JSON.parse(localStorage.getItem("tghDone")||"[]")),onlySaved:false};
+const topics=s=>topicMap[s]||generic, id=(p,s,t)=>`${p.code}::${s}::${t}`;
+function records(){return papers.flatMap(p=>p.subjects.flatMap(s=>topics(s).map(t=>({p,s,t,id:id(p,s,t)}))))}
+function persist(){localStorage.setItem("tghSaved",JSON.stringify([...S.saved]));localStorage.setItem("tghDone",JSON.stringify([...S.done]));stats()}
+function stats(){$("savedCount").textContent=S.saved.size;$("bookmarkStat").textContent=S.saved.size;$("subjectStat").textContent=papers.reduce((n,p)=>n+p.subjects.length,0);$("topicStat").textContent=records().length}
+function toast(msg){let t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove("show"),1900)}
+function renderPapers(){
+ let q=S.search.toLowerCase().trim(),list=papers.filter(p=>(S.cat==="all"||p.cat===S.cat));
+ if(S.onlySaved){let codes=new Set(records().filter(r=>S.saved.has(r.id)).map(r=>r.p.code));list=list.filter(p=>codes.has(p.code))}
+ if(q)list=list.filter(p=>`${p.code} ${p.name} ${p.subjects.join(" ")} ${p.subjects.flatMap(topics).join(" ")}`.toLowerCase().includes(q));
+ $("paperGrid").innerHTML=list.length?list.map(p=>`<button class="card" style="--accent:${p.color}" data-code="${p.code}"><div class="cardtop"><span class="code">${p.code}</span><span style="font-size:25px">${p.icon}</span></div><h3>${esc(p.name)}</h3><p>${p.subjects.length} subject collections · topic previews</p><div class="cardfoot"><span>EXPLORE PAPER</span><span>↗</span></div></button>`).join(""):'<div class="empty">No matches. Try another search or category.</div>';
+ $("paperGrid").querySelectorAll("[data-code]").forEach(b=>b.onclick=()=>openPaper(b.dataset.code));
+}
+function home(){S.view="home";S.paper=S.subject=S.topic=null;S.onlySaved=false;$("home").classList.remove("hidden");$("detail").classList.add("hidden");renderPapers();window.scrollTo({top:0,behavior:"smooth"})}
+function showDetail(){$("home").classList.add("hidden");$("detail").classList.remove("hidden")}
+function crumb(items){$("crumb").innerHTML=items.map((x,i)=>i%2===0?`<span>${x.label}</span>`:`<span>›</span>`).join("");}
+function setCrumb(html){$("crumb").innerHTML=html;$("crumb").querySelectorAll("[data-home]").forEach(b=>b.onclick=home);$("crumb").querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>openPaper(b.dataset.p));$("crumb").querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>openSubject(b.dataset.s))}
+function openPaper(code){
+ S.paper=papers.find(p=>p.code===code);if(!S.paper)return;S.subject=S.topic=null;S.view="paper";showDetail();
+ setCrumb(`<button data-home>Home</button><span>›</span><span>${code}</span>`);
+ $("title").textContent=`${code} · ${S.paper.name}`;$("desc").textContent=`Explore the subject collections for ${S.paper.name}. Open a subject to view its topic roadmap.`;
+ $("detailContent").innerHTML=`<div class="subjects">${S.paper.subjects.map((s,i)=>`<button class="subject" data-subject="${esc(s)}"><span class="mini">SUBJECT ${String(i+1).padStart(2,"0")}</span><h3>${esc(s)}</h3><p>${topics(s).length} starter topics · preview available</p></button>`).join("")}</div>`;
+ $("detailContent").querySelectorAll("[data-subject]").forEach(b=>b.onclick=()=>openSubject(b.dataset.subject));progress();window.scrollTo({top:0,behavior:"smooth"});
+}
+function openSubject(s){
+ S.subject=s;S.topic=null;S.view="subject";showDetail();setCrumb(`<button data-home>Home</button><span>›</span><button data-p="${S.paper.code}">${S.paper.code}</button><span>›</span><span>${esc(s)}</span>`);
+ $("title").textContent=s;$("desc").textContent=`A starter roadmap for ${s}. Preview a topic to see a suggested learning sequence.`;
+ $("detailContent").innerHTML=`<div class="topics">${topics(s).map((t,i)=>{let tid=id(S.paper,s,t);return `<button class="topic" data-topic="${esc(t)}"><span class="mini">TOPIC ${String(i+1).padStart(2,"0")}</span><h3>${esc(t)}</h3><p>${S.done.has(tid)?"✓ Completed": "Preview outline and study steps"}${S.saved.has(tid)?" · ★ Saved":""}</p></button>`}).join("")}</div>`;
+ $("detailContent").querySelectorAll("[data-topic]").forEach(b=>b.onclick=()=>preview(b.dataset.topic));progress();window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function progress(){let arr=records().filter(r=>r.p.code===S.paper.code),n=arr.filter(r=>S.done.has(r.id)).length,pct=arr.length?Math.round(n/arr.length*100):0;$("progressLabel").textContent=`${pct}% complete · ${n}/${arr.length} topics`;$("progressBar").style.width=pct+"%"}
+function preview(t){
+ let tid=id(S.paper,S.subject,t);S.preview={t,tid};$("previewTitle").textContent=t;$("previewDesc").textContent=`${S.subject} · ${S.paper.name} (${S.paper.code})`;
+ $("previewSteps").innerHTML=[`Review the definitions and prerequisites for ${t}.`,`Understand the main principles and reasoning behind them.`,`Write down relevant formulas, assumptions, and units.`,`Work through examples, then solve exam-level questions.`,`Revise mistakes and create a short summary sheet.`].map(x=>`<li>${esc(x)}</li>`).join("");
+ $("modalSave").textContent=S.saved.has(tid)?"★ Remove bookmark":"☆ Bookmark topic";$("backdrop").classList.add("show");
+ $("openTopic").onclick=()=>{closePreview();openTopic(t)};$("modalSave").onclick=()=>{toggleSave(tid);$("modalSave").textContent=S.saved.has(tid)?"★ Remove bookmark":"☆ Bookmark topic"};
+}
+function closePreview(){$("backdrop").classList.remove("show");S.preview=null}
+function toggleSave(tid){if(S.saved.has(tid)){S.saved.delete(tid);toast("Removed bookmark")}else{S.saved.add(tid);toast("Topic bookmarked")}persist();if(S.view==="home")renderPapers()}
+function openTopic(t){
+ S.topic=t;S.view="topic";let tid=id(S.paper,S.subject,t),p=S.paper,s=S.subject;showDetail();
+ setCrumb(`<button data-home>Home</button><span>›</span><button data-p="${p.code}">${p.code}</button><span>›</span><button data-s="${esc(s)}">${esc(s)}</button><span>›</span><span>${esc(t)}</span>`);
+ $("title").textContent=t;$("desc").textContent=`Study outline · ${s} · ${p.name}`;
+ $("detailContent").innerHTML=`<article class="content"><h2>What to study</h2><p>This starter outline helps you organize preparation. Use the official syllabus, a trusted textbook, or a course for full theory and practice.</p><ol><li><b>Build the basics:</b> note key definitions, symbols, assumptions, and units.</li><li><b>Understand the concept:</b> explain the idea in your own words before memorising formulas.</li><li><b>Learn the methods:</b> collect important formulas and note when each applies.</li><li><b>Solve examples:</b> start with a basic example, then try standard exam-level questions.</li><li><b>Practise GATE questions:</b> solve relevant previous-year questions and review mistakes.</li><li><b>Revise:</b> make a one-page summary of concepts, formulas, and common traps.</li></ol><div class="note"><b>Important:</b> This is a study outline, not complete notes. Confirm topic coverage in the official syllabus.</div><div class="actions"><button class="btn primary" id="doneBtn">${S.done.has(tid)?"✓ Completed — undo":"✓ Mark as completed"}</button><button class="btn secondary" id="saveBtn">${S.saved.has(tid)?"★ Bookmarked":"☆ Bookmark topic"}</button></div></article>`;
+ $("doneBtn").onclick=()=>{S.done.has(tid)?S.done.delete(tid):S.done.add(tid);persist();openTopic(t);toast(S.done.has(tid)?"Marked complete":"Completion removed")};
+ $("saveBtn").onclick=()=>{toggleSave(tid);openTopic(t)};progress();window.scrollTo({top:0,behavior:"smooth"});
+}
+$("search").addEventListener("input",e=>{S.search=e.target.value;S.onlySaved=false;if(S.view!=="home")home();renderPapers()});
+$("filter").addEventListener("change",e=>{S.cat=e.target.value;renderPapers()});
+$("homeBrand").onclick=e=>{e.preventDefault();home()};
+$("papersNav").onclick=e=>{if(S.view!=="home"){e.preventDefault();home();setTimeout(()=>$("papers").scrollIntoView({behavior:"smooth"}),40)}};
+$("savedNav").onclick=()=>{S.view="home";S.onlySaved=true;S.search="";S.cat="all";$("search").value="";$("filter").value="all";$("home").classList.remove("hidden");$("detail").classList.add("hidden");renderPapers();$("papers").scrollIntoView({behavior:"smooth"});if(!S.saved.size)toast("Bookmark a topic to collect it here")};
+$("back").onclick=()=>{if(S.view==="topic")openSubject(S.subject);else if(S.view==="subject")openPaper(S.paper.code);else home()};
+$("closeModal").onclick=closePreview;$("backdrop").onclick=e=>{if(e.target===$("backdrop"))closePreview()};document.addEventListener("keydown",e=>{if(e.key==="Escape")closePreview()});
+$("year").textContent=new Date().getFullYear();stats();renderPapers();
+</script>
+</body>
+</html>
